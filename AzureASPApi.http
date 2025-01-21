@@ -1,0 +1,12 @@
+﻿@AzureASPApi_HostAddress = https://localhost:7263
+
+POST {{AzureASPApi_HostAddress}}/todoitems
+Content-Type: application/json
+
+{
+  //Todo
+  "name":"walk dog",
+  "isComplete":true
+}
+
+###
