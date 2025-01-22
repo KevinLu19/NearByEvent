@@ -17,7 +17,7 @@ public class EventDiscovery
 		_country_name = country_name;
 	}
 
-	public void NavigateArea()
+	public string NavigateArea()
 	{
 		var complete_url = $"{_BASEURL}/find/?location={_country_name}--{_state_code}--{_city_name}&source=EVENTS";
 
@@ -27,15 +27,25 @@ public class EventDiscovery
 			var web = new HtmlWeb();
 
 			var document = web.Load(complete_url);
+
+			if (document.Text != null)
+				return document.Text;
 		}
 		catch (Exception ex)
 		{
 			Console.WriteLine(ex.Message);
 		}
+
+		return String.Empty;
 	}
 
 	public void Discovery()
 	{
+		string chk_web_result = NavigateArea();
 
+		if (chk_web_result != String.Empty)
+		{
+			Console.WriteLine(chk_web_result);
+		}
 	}
 }
