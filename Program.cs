@@ -5,7 +5,7 @@ namespace AzureASPApi;
 /*
 Project: 
 Web app for organizing and discovering local community events.
-Returns only events in the area from user entering zip code / city name only.
+Returns only events in the area from user entering city name only (easier to remember).
 
 Security features: wont store zip code or any user info in database. They only enter zip and only searches events.
 
